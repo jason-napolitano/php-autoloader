@@ -4,13 +4,13 @@ namespace PHPAutoloader {
 
     use PHPAutoloader\Contracts\AutoloaderInstance;
 
-    class Autoloader implements AutoloaderInstance
+    final class Autoloader implements AutoloaderInstance
     {
         /** @var array<string, array<int, string>> $prefixes registered psr-4 namespace prefixes */
-        protected array $prefixes = [];
+	    protected array $prefixes = [];
 
         /** @var array<string, string> $classmap fully-qualified class => file path */
-        protected array $classmap = [];
+	    protected array $classmap = [];
 
         /** @var array<string, string> $loadedFiles files loaded by this autoloader */
         protected array $loadedFiles = [];
@@ -18,7 +18,8 @@ namespace PHPAutoloader {
         /** @var array<string, string> $availableFiles discovered PHP files */
         protected array $availableFiles = [];
 
-        protected array $namespaceIndex = [];
+		/** @var array $namespaceIndex indexed namespaces */
+	    protected array $namespaceIndex = [];
 
         /**
          * @inheritdoc
@@ -95,8 +96,6 @@ namespace PHPAutoloader {
 
                 $parts = explode('\\', $remaining);
 
-                // If there is no namespace below the requested namespace,
-                // then the class is directly inside it.
                 if (count($parts) <= 1) {
                     continue;
                 }
