@@ -1,13 +1,13 @@
-> This is a PSR-4–compliant class loader that automatically discovers and indexes classes within registered
+# PHP Autoloader
+> > This is a PSR-4–compliant class loader that automatically discovers and indexes classes within registered
 > namespace directories. As namespaces are registered, it recursively scans their directories, builds an optimized class
-> map for constant-time class resolution, and tracks all discovered PHP files without requiring repeated filesystem
-> lookups during autoloading. In addition to loading classes, it provides rich introspection capabilities, including
-> access to registered namespaces, discovered classes, available files, loaded files, unloaded files, and namespace
-> hierarchies.
+> map for class resolution, and tracks all discovered PHP files without requiring repeated filesystem lookups during
+> autoloading. In addition to loading classes, it provides rich introspection capabilities, including access to registered
+> namespaces, discovered classes, available files, loaded files, unloaded files, and namespace hierarchies.
 
-# How-to Guide:
+## How-to Guide:
 
-## Building the autoloader
+### Building the autoloader
 
 ```php
 use PHPAutoloader\Autoloader;
@@ -15,15 +15,15 @@ use PHPAutoloader\Autoloader;
 $autoloader = new  Autoloader();
 ```
 
-## Registering the autoloader
+### Registering the autoloader
 
 ```php
 $autoloader->register();
 ```
 
-## Adding to the autoloader
+### Adding to the autoloader
 
-### Namespaces
+#### Namespaces
 
 ```php
 $autoloader
@@ -31,7 +31,7 @@ $autoloader
     ->addNamespace('AppTwo', __DIR__ . '/app-two');
 ```
 
-### Classes
+#### Classes
 
 ```php
 $autoloader
@@ -39,39 +39,39 @@ $autoloader
     ->addClassMap('NewClassTwo', __DIR__ . '/new-app-two');
 ```
 
-## Retrieving from the autoloader
+### Retrieving from the autoloader
 
-### Prefix array
+#### Prefix array
 
 ```php
 $autoloader->prefixes();
 ```
 
-### Loaded classes
+#### Loaded classes
 
 ```php
 $autoloader->getCLasses(?subNamespace: '...'); // => array
 ```
 
-### Sub-namespaces
+#### Sub-namespaces
 
 ```php
 $autoloader->getSubNamespaces(namespace: '...'); // => array
 ```
 
-### Class count
+#### Class count
 
 ```php
 $autoloader->getClassCount(); // => int
 ```
 
-### Class checker
+#### Class checker
 
 ```php
 $autoloader->hasClass(class: '...'); // => bool
 ```
 
-### Class file
+#### Class file
 
 ```php
 $autoloader->getClassFile(class: '...'); // => string|null
