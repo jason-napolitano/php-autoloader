@@ -1,6 +1,6 @@
 <?php
 
-use JasonNapolitano\Autoloader;
+use PHPAutoloader\Autoloader;
 use Tests\TestCase;
 use Tests\TestState;
 
@@ -16,9 +16,9 @@ use Tests\TestState;
 */
 
 pest()->beforeAll(function () {
-	TestState::$autoloader = new Autoloader();
-	TestState::$autoloader->register();
-	TestState::$autoloader->addNamespace('App', __DIR__ . '/App');
+    TestState::$autoloader = new Autoloader();
+    TestState::$autoloader->register();
+    TestState::$autoloader->addNamespace('App', __DIR__ . '/App');
 });
 
 

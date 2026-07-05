@@ -2,8 +2,8 @@
 
 namespace NewApp {
 
-	class NewClass
-	{
-		// ...
-	}
+    class NewClass
+    {
+        // ...
+    }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Services {
 
-	class ExampleService
-	{
-
-	}
+    class ExampleService
+    {
+	    // ...
+    }
 }

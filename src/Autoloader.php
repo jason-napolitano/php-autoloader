@@ -1,8 +1,8 @@
 <?php
 
-namespace JasonNapolitano {
+namespace PHPAutoloader {
 
-    use JasonNapolitano\Contracts\AutoloaderInstance;
+    use PHPAutoloader\Contracts\AutoloaderInstance;
 
     class Autoloader implements AutoloaderInstance
     {

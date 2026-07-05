@@ -2,10 +2,10 @@
 
 namespace Tests {
 
-	use JasonNapolitano\Contracts\AutoloaderInstance;
+    use PHPAutoloader\Contracts\AutoloaderInstance;
 
-	final class TestState
-	{
-		public static AutoloaderInstance $autoloader;
-	}
+    final class TestState
+    {
+        public static AutoloaderInstance $autoloader;
+    }
 }

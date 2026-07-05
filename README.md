@@ -5,6 +5,29 @@
 > access to registered namespaces, discovered classes, available files, loaded files, unloaded files, and namespace
 > hierarchies.
 
+# How-to Guide:
+> First, create a new autoloader instance:
+```php
+<?php
+
+use PHPAutoloader\Autoloader;
+
+$autoloader = new  Autoloader();
+```
+
+> Next, register the autoloader:
+```php
+<?php
+
+$autoloader->register();
+```
+> Finally, add your namespaces to the autoloader:
+```php
+<?php
+
+$autoloader->addNamespace('App', __DIR__ . '/app');
+```
+
 # License
 
 MIT License

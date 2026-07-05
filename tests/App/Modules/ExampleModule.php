@@ -2,8 +2,8 @@
 
 namespace App\Modules {
 
-	class ExampleModule
-	{
-
-	}
+    class ExampleModule
+    {
+		// ...
+    }
 }

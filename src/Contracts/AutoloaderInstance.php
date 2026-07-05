@@ -1,6 +1,6 @@
 <?php
 
-namespace JasonNapolitano\Contracts {
+namespace PHPAutoloader\Contracts {
 
     interface AutoloaderInstance
     {
@@ -43,14 +43,14 @@ namespace JasonNapolitano\Contracts {
          */
         public function getClasses(?string $subNamespace = null): array;
 
-	    /**
-	     * Returns any sub-namespaces within the classmap
-	     *
-	     * @param string $namespace
-	     *
-	     * @return array
-	     */
-	    public function getSubNamespaces(string $namespace): array;
+        /**
+         * Returns any sub-namespaces within the classmap
+         *
+         * @param string $namespace
+         *
+         * @return array
+         */
+        public function getSubNamespaces(string $namespace): array;
 
         /**
          * Get total class count
