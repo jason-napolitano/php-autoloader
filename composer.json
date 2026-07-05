@@ -1,0 +1,27 @@
+{
+    "name": "jason-napolitano/php-autoloader",
+    "description": "A PSR-4 compatible autoloader utility",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "JasonNapolitano\\": "src",
+            "Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.5"
+    },
+    "require-dev": {
+        "laravel/pint": "^v1.29.3",
+        "pestphp/pest": "^v4.7.4",
+        "symfony/var-dumper": "^v8.1.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
