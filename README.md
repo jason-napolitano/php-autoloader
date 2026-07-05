@@ -1,11 +1,9 @@
-# psr4-autoloader
-
-This autoloader is a PSR-4–compliant class loader that automatically discovers and indexes classes within registered
-namespace directories. As namespaces are registered, it recursively scans their directories, builds an optimized class
-map for constant-time class resolution, and tracks all discovered PHP files without requiring repeated filesystem
-lookups during autoloading. In addition to loading classes, it provides rich introspection capabilities, including
-access to registered namespaces, discovered classes, available files, loaded files, unloaded files, and namespace
-hierarchies.
+> This autoloader is a PSR-4–compliant class loader that automatically discovers and indexes classes within registered
+> namespace directories. As namespaces are registered, it recursively scans their directories, builds an optimized class
+> map for constant-time class resolution, and tracks all discovered PHP files without requiring repeated filesystem
+> lookups during autoloading. In addition to loading classes, it provides rich introspection capabilities, including
+> access to registered namespaces, discovered classes, available files, loaded files, unloaded files, and namespace
+> hierarchies.
 
 # License
 
