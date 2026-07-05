@@ -6,7 +6,7 @@
 > hierarchies.
 
 # How-to Guide:
-> First, create a new autoloader instance:
+## Building the autoloader
 ```php
 <?php
 
@@ -15,17 +15,30 @@ use PHPAutoloader\Autoloader;
 $autoloader = new  Autoloader();
 ```
 
-> Next, register the autoloader:
+## Registering the autoloader
 ```php
 <?php
 
 $autoloader->register();
 ```
-> Finally, add your namespaces to the autoloader:
+
+## Adding to the autoloader
+
+### Namespaces
 ```php
 <?php
 
-$autoloader->addNamespace('App', __DIR__ . '/app');
+$autoloader
+    ->addNamespace('AppOne', __DIR__ . '/app-one')
+    ->addNamespace('AppTwo', __DIR__ . '/app-two');
+```
+
+### Classes
+```php
+<?php
+$autoloader
+    ->addClassMap('NewClassOne', __DIR__ . '/new-app-one')
+    ->addClassMap('NewClassTwo', __DIR__ . '/new-app-two');
 ```
 
 # License
