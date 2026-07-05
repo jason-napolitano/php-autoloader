@@ -1,4 +1,4 @@
-> This autoloader is a PSR-4–compliant class loader that automatically discovers and indexes classes within registered
+> This is a PSR-4–compliant class loader that automatically discovers and indexes classes within registered
 > namespace directories. As namespaces are registered, it recursively scans their directories, builds an optimized class
 > map for constant-time class resolution, and tracks all discovered PHP files without requiring repeated filesystem
 > lookups during autoloading. In addition to loading classes, it provides rich introspection capabilities, including
@@ -6,7 +6,9 @@
 > hierarchies.
 
 # How-to Guide:
+
 ## Building the autoloader
+
 ```php
 use PHPAutoloader\Autoloader;
 
@@ -14,6 +16,7 @@ $autoloader = new  Autoloader();
 ```
 
 ## Registering the autoloader
+
 ```php
 $autoloader->register();
 ```
@@ -21,6 +24,7 @@ $autoloader->register();
 ## Adding to the autoloader
 
 ### Namespaces
+
 ```php
 $autoloader
     ->addNamespace('AppOne', __DIR__ . '/app-one')
@@ -28,6 +32,7 @@ $autoloader
 ```
 
 ### Classes
+
 ```php
 $autoloader
     ->addClassMap('NewClassOne', __DIR__ . '/new-app-one')
@@ -37,31 +42,37 @@ $autoloader
 ## Retrieving from the autoloader
 
 ### Prefix array
+
 ```php
 $autoloader->prefixes();
 ```
 
 ### Loaded classes
+
 ```php
 $autoloader->getCLasses(?subNamespace: '...'); // => array
 ```
 
 ### Sub-namespaces
+
 ```php
 $autoloader->getSubNamespaces(namespace: '...'); // => array
 ```
 
 ### Class count
+
 ```php
 $autoloader->getClassCount(); // => int
 ```
 
 ### Class checker
+
 ```php
 $autoloader->hasClass(class: '...'); // => bool
 ```
 
 ### Class file
+
 ```php
 $autoloader->getClassFile(class: '...'); // => string|null
 ```
