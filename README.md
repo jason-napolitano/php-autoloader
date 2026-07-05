@@ -8,8 +8,6 @@
 # How-to Guide:
 ## Building the autoloader
 ```php
-<?php
-
 use PHPAutoloader\Autoloader;
 
 $autoloader = new  Autoloader();
@@ -17,8 +15,6 @@ $autoloader = new  Autoloader();
 
 ## Registering the autoloader
 ```php
-<?php
-
 $autoloader->register();
 ```
 
@@ -26,8 +22,6 @@ $autoloader->register();
 
 ### Namespaces
 ```php
-<?php
-
 $autoloader
     ->addNamespace('AppOne', __DIR__ . '/app-one')
     ->addNamespace('AppTwo', __DIR__ . '/app-two');
@@ -35,10 +29,41 @@ $autoloader
 
 ### Classes
 ```php
-<?php
 $autoloader
     ->addClassMap('NewClassOne', __DIR__ . '/new-app-one')
     ->addClassMap('NewClassTwo', __DIR__ . '/new-app-two');
+```
+
+## Retrieving from the autoloader
+
+### Prefix array
+```php
+$autoloader->prefixes();
+```
+
+### Loaded classes
+```php
+$autoloader->getCLasses(?subNamespace: '...'); // => array
+```
+
+### Sub-namespaces
+```php
+$autoloader->getSubNamespaces(namespace: '...'); // => array
+```
+
+### Class count
+```php
+$autoloader->getClassCount(); // => int
+```
+
+### Class checker
+```php
+$autoloader->hasClass(class: '...'); // => bool
+```
+
+### Class file
+```php
+$autoloader->getClassFile(class: '...'); // => string|null
 ```
 
 # License
